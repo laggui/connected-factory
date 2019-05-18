@@ -1,0 +1,5 @@
+.vscode/
+# Reports and files
+*.docx
+*.pdf
+*psd
