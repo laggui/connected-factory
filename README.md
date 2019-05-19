@@ -16,3 +16,12 @@ change device name, change device range, change device output type).
 
 ![Connected Factory Diagram](docs/diagram.jpg)
 
+### Data Capture Module
+
+### Data Processing Module
+
+### Server Side + Remote Access
+
+*Disclaimer: prior to this project (2015), I had no web programming 
+experience. This was a great opportunity for me to develop 
+my programming skills, and learn HTML, PHP and MySQL* 
