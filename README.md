@@ -11,7 +11,12 @@ monitor each of his connected devices simultaneously and download the
 reading history (logged data) in csv format for each device. From the 
 web page, the devices can also be configured (e.g., delete the data 
 history, change device name, change device range, change device output 
-type).
+type). In industrial process control, analog 4–20 mA current loops are 
+commonly used for electronic signalling, with the two values of 4 & 20 
+mA representing 0–100% of the range of measurement or control. Based on 
+this de facto standard, the modules can be used on any existing 
+equipment that follows this standard, or that outputs a direct current 
+voltage.
 
 ![Connected Factory Diagram](docs/diagram.jpg)
 
