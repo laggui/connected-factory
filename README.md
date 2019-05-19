@@ -7,11 +7,12 @@ YOUR CITY) contest, which challenged the participants to carry out
 innovative projects aimed at improving the city of today and creating 
 the city of tomorrow.
 
-My proposed project, the `Connected Factory`, allows the user to monitor 
-each of his connected devices simultaneously and download the reading 
-history (logged data) in csv format for each device. From the web page, 
-the devices can also be configured (e.g., delete the data history, 
-change device name, change device range, change device output type).
+My proposed project, the **Connected Factory**, allows the user to 
+monitor each of his connected devices simultaneously and download the 
+reading history (logged data) in csv format for each device. From the 
+web page, the devices can also be configured (e.g., delete the data 
+history, change device name, change device range, change device output 
+type).
 
 
 ![Connected Factory Diagram](docs/diagram.jpg)
@@ -23,12 +24,13 @@ transmits if wirelessly to the data processing module.
 
 This module is composed of a power supply circuit, a conversion circuit 
 (for 4-20 mA input readings), a protection circuit and a microcontroller 
-(PIC18F4620) connected to a Digi XBee RF module. With the help of its 
-internal ADC, the microcontroller reads the input voltage every five 
-seconds using a timer interrupt and communicates the digital value to 
-the XBee module with his built-in UART module, adding the device ID to 
-the message transmitted (format: <ID-Data>). The XBee module 
-relays the message wirelessly to the data processing module.
+(PIC18F4620) connected to a [Digi XBee RF module][digi-xbee] with a 
+[regulator][xbee-explorer]. With the help of its internal ADC, the 
+microcontroller reads the input voltage every five seconds using a timer 
+interrupt and communicates the digital value to the XBee module with his 
+built-in UART module, adding the device ID to the message transmitted 
+(format: `<ID-Data>`). The XBee module relays the message wirelessly to 
+the data processing module.
 
 ![Data Capture Module Schematic](docs/schematic.png)
 
@@ -42,9 +44,10 @@ automatically appear on the monitoring web page.
 
 On the data processing side, the master XBee module continuously 
 receives the data from the data capture modules and transmits it to the 
-microcontroller (Arduino Uno). An Arduino Uno was used with an Ethernet 
-shield to communicate the data to the server, which helped rapidly 
-prototype this project for the timeframe imposed.
+microcontroller ([Arduino Uno][arduino]). The Arduino Uno was used with 
+an [Ethernet shield][ethernet-shield] to communicate the data to the 
+server, which helped rapidly prototype this project for the timeframe 
+imposed.
 
 Whenever the microcontroller receives a packet on its serial port, the 
 packet is read and its content is stored in a buffer until the packet is 
@@ -55,10 +58,10 @@ Ethernet with the help of GET requests.
 ### Server Side + Remote Access
 
 Although the server can be run on pretty much any compatible machine 
-with MySQL, a Beagle Bone Black was used and configured to run the 
-server-side scripts. The embedded computer was running under the Debian 
-Linux distribution, and automatically assigned itself a static IP on  
-your private network when powered on.
+with MySQL, a [BeagleBone Black][bbb] was used and configured to run 
+the server-side scripts. The embedded computer was running under the 
+Debian Linux distribution, and automatically assigned itself a static IP 
+on your private network when powered on.
 
 On the front-end, the web page is developped in HTML5 with Bootstrap for 
 a responsive monitoring system. Different PHP5 scripts are executed on 
@@ -78,3 +81,10 @@ downloaded in CSV format.
 experience (and basically had just started programming in C). Throughout 
 this project, I improved my programming abilities and learned HTML, PHP 
 & SQL.* 
+
+<!-- Links -->
+[digi-xbee]:https://www.digi.com/products/embedded-systems/rf-modules/2-4-ghz-modules/xbee-digimesh-2-4
+[xbee-explorer]:https://www.sparkfun.com/products/11373
+[arduino]:https://store.arduino.cc/usa/arduino-uno-rev3
+[ethernet-shield]: https://www.arduino.cc/en/Reference/Ethernet
+[bbb]:https://beagleboard.org/black
