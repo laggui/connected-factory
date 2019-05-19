@@ -14,7 +14,6 @@ web page, the devices can also be configured (e.g., delete the data
 history, change device name, change device range, change device output 
 type).
 
-
 ![Connected Factory Diagram](docs/diagram.jpg)
 
 ### Data Capture Module
@@ -75,7 +74,9 @@ device connected is automatically displayed when accessing the page, so
 a simple page refresh suffices for a newly connected device to appear. 
 Because all of the reading data is automatically stored in the server's 
 MySQL database, the data history for each device can easily be 
-downloaded in CSV format.
+downloaded in csv format.
+
+![Web Demo](docs/demo.gif)
 
 *Disclaimer: prior to this project (2015), I had no web programming 
 experience (and basically had just started programming in C). Throughout 
